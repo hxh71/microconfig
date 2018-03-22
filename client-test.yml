@@ -1,0 +1,28 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://hxh:hxh@localhost:8761/eureka/
+  instance:
+    instance-id: client.com # 在信息列表时显示主机名称
+    prefer-ip-address: true # 访问路径变成ip地址
+    lease-renewal-interval-in-seconds: 2 # 设置心跳的时间间隔 单位/秒（默认30秒）
+    # 表示距离上一次发送心跳之后等待下一次发送心跳的间隔时间，如果超过了次间隔时间，则认为该微服务已经宕机
+    lease-expiration-duration-in-seconds: 5 # 如果现在超过了5秒的间隔 单位/秒 （默认90秒）
+spring:
+  application:
+    name: client
+feign:
+  compression:
+    request:
+      mime-types:               # 可以被压缩的类型
+      - text/xml
+      - application/json
+      - application/json
+      min-request-size: 2048    # 超过2038的字节进行压缩
+env:
+  test
+#info:  # client 信息
+#  app.name: chero-microcloud
+#  company.name: www.cheroee.com
+#  build.artifactId: $project.artifactId$
+#  build.version:  $project.version$
