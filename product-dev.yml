@@ -1,3 +1,7 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://hxh:hxh@localhost:8761/eureka/
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
@@ -14,7 +18,3 @@ spring:
     port: 6379
   jpa:
     show-sql: true
-eureka:
-  client:
-    service-url:
-      defaultZone: http://hxh:hxh@localhost:8761/eureka/
